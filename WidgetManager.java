@@ -1,7 +1,9 @@
 import greenfoot.*;
+import java.util.ArrayList;
 
 public class WidgetManager extends Actor {
     private World world;
+    private ArrayList<Widget> widgets;
     
     public WidgetManager(World world) {
         this.world = world;
@@ -9,11 +11,15 @@ public class WidgetManager extends Actor {
         setImage((GreenfootImage) null);
     }
     
+    public void act() {
+        
+    }
+    
     public World getWorld() {
         return this.world;
     }
     
-    public void act() {
-        
+    public void addWidget(Widget widget) {
+        widgets.add(widget);
     }
 }
