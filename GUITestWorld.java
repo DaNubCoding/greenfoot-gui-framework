@@ -11,14 +11,19 @@ public class GUITestWorld extends World {
         
         Widget w2 = new Widget(manager, Anchor.TOP, 50, 50, 50, 50);
         w2.fill(Color.RED);
-        w2.setParent(w1);
+        w1.addChild(w2);
         
         Widget w3 = new Widget(manager, Anchor.CENTER, 25, 25, 10, 10);
         w3.fill(Color.GREEN);
-        w3.setParent(w2);
+        w2.addChild(w3);
+        
+        Widget w4 = new Widget(manager, Anchor.BOTTOM, 5, 5, 5, 5);
+        w4.fill(Color.ORANGE);
+        w3.addChild(w4);
         
         w1.place();
         w2.place();
         w3.place();
+        w4.place();
     }
 }

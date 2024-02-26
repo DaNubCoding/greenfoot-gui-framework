@@ -6,7 +6,7 @@ public class Widget extends Actor {
     protected World world;
     protected GreenfootImage image;
     protected Widget parent;
-    protected ArrayList<Widget> children;
+    protected ArrayList<Widget> children = new ArrayList<Widget>();
     
     protected int x;
     protected int y;
@@ -76,7 +76,6 @@ public class Widget extends Actor {
     
     public void setParent(Widget parent) {
         this.parent = parent;
-        parent.addChild(this);
         // Now that it has become a nested Widget, manual rendering will take place
         setImage((GreenfootImage) null);
         // Recalculate position to adjust for drawing from the topleft instead of the center on the parent image
@@ -85,7 +84,7 @@ public class Widget extends Actor {
     }
     
     public void place() {
-        world.addObject(this, x, y);
+        world.addObject(this, 0, 0);
         manager.addWidget(this);
     }
 }

@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class WidgetManager extends Actor {
     private World world;
-    private ArrayList<Widget> widgets;
+    private ArrayList<Widget> widgets = new ArrayList<Widget>();
     
     public WidgetManager(World world) {
         this.world = world;
