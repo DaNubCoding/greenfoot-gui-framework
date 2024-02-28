@@ -7,6 +7,7 @@ public class Widget extends Actor {
     protected GreenfootImage image;
     protected Widget parent;
     protected ArrayList<Widget> children = new ArrayList<Widget>();
+    protected boolean placed = false;
     
     protected int x;
     protected int y;
@@ -53,14 +54,14 @@ public class Widget extends Actor {
      * Calculate the x coordinate based on the anchor.
      */
     private int modifyXByAnchor(int x) {
-        return x - this.anchor.getX() * this.width / 2;
+        return x - anchor.getX() * width / 2;
     }
     
     /**
      * Calculate the y coordinate based on the anchor.
      */
     private int modifyYByAnchor(int y) {
-        return y - this.anchor.getY() * this.height / 2;
+        return y - anchor.getY() * height / 2;
     }
     
     public void addChild(Widget child) {
@@ -84,7 +85,9 @@ public class Widget extends Actor {
     }
     
     public void place() {
+        if (placed) return;
         world.addObject(this, 0, 0);
         manager.addWidget(this);
+        placed = true;
     }
 }
