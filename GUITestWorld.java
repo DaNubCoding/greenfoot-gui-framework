@@ -6,14 +6,14 @@ public class GUITestWorld extends World {
         
         WidgetManager manager = new WidgetManager(this);
         
-        Widget w1 = new Widget(manager, Anchor.TOPLEFT, 100, 100, 100, 100);
+        Widget w1 = new Widget(manager, Anchor.TOPLEFT, 100, 100, 200, 100);
         w1.fill(Color.BLACK);
         
-        Widget w2 = new Widget(manager, Anchor.TOP, 50, 50, 50, 50);
+        Widget w2 = new Widget(manager, Anchor.TOP, 100, 50, 50, 50);
         w2.fill(Color.RED);
         w1.addChild(w2);
         
-        Widget w3 = new Widget(manager, Anchor.CENTER, 25, 25, 10, 10);
+        Widget w3 = new Widget(manager, Anchor.CENTER, 25, 25, 10, 20);
         w3.fill(Color.GREEN);
         w2.addChild(w3);
         
