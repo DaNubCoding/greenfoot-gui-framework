@@ -54,14 +54,14 @@ public class Widget extends Actor {
      * Calculate the x coordinate based on the anchor.
      */
     private int modifyXByAnchor(int x) {
-        return x - anchor.getX() * width / 2;
+        return x - anchor.getX() * (int) Math.ceil((double) width / 2.0);
     }
     
     /**
      * Calculate the y coordinate based on the anchor.
      */
     private int modifyYByAnchor(int y) {
-        return y - anchor.getY() * height / 2;
+        return y - anchor.getY() * (int) Math.ceil((double) height / 2.0);
     }
     
     public void addChild(Widget child) {
